@@ -1,0 +1,173 @@
+<style>
+  .card-container {
+    margin-top: 20px;
+  }
+
+  .card-header {
+
+    background-color: blue;
+    color: white;
+  }
+</style>
+<div class="card-container">
+  
+  <div class="card">
+  <div class="card-header">
+    Parts
+  </div>
+  <div class="card-body">
+     <div class="form-group row">
+
+    <label for="championPart" class="col-sm-2 col-form-label">Champion Part #</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="championPart">
+    </div>
+    <label for="partDescription" class="col-sm-2 col-form-label">Part Description</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="partDescription">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="championPart" class="col-sm-2 col-form-label">OEM Part #</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="championPart">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="championPart" class="col-sm-2 col-form-label">MFG Part #</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="championPart">
+    </div>
+  </div>
+
+  <br>
+
+  <h5>Order Information</h5>
+  <div class="form-group row">
+
+    <label for="Order" class="col-sm-2 col-form-label">Order Quantity</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="Order">
+    </div>
+    <label for="Delivery" class="col-sm-2 col-form-label">Delivery Date</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="Delivery">
+    </div>
+    <label for="poNumber" class="col-sm-2 col-form-label">PO Number</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="poNumber">
+    </div>
+  </div>
+
+   <br>
+
+  <h5>Vendor Information</h5>
+   <div class="form-group row">
+
+    <label for="SelectVendor" class="col-sm-2 col-form-label">Select Vendor</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="SelectVendor">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="VendorName" class="col-sm-2 col-form-label">Vendor Name</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="VendorName">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="VendorPhoneNumber" class="col-sm-2 col-form-label">Vendor Phone Number</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="VendorPhoneNumber">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="VendorEmail" class="col-sm-2 col-form-label">Vendor Email</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="VendorEmail">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="VendorAddress" class="col-sm-2 col-form-label">Vendor Address</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="VendorAddress">
+    </div>
+  </div>
+
+
+<br>
+  <a href="#" class="btn btn-primary">Save and Close</a>
+    <a href="#" class="btn btn-primary" style="float: right;">Cancel</a>
+  </div>
+</div>
+
+</div>
+
+<%= form_with(model: part_order) do |form| %>
+  <% if part_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(part_order.errors.count, "error") %> prohibited this part_order from being saved:</h2>
+
+      <ul>
+        <% part_order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= form.label :part_name %>
+      <%= form.text_field :part_name, data: {behavior: "autocomplete-parts-name"}, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :part_mhr_number %>
+      <%= form.text_field :mhr_number, data: {behavior: "autocomplete-parts-mhrnumber"}, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :part_description %>
+      <%= form.text_area :part_description, class: "form-control" %>
+    </div>
+
+     <div class="form-group">
+      <%= form.label :vendor_id %>
+      <%= form.text_field :vendor_id,  class: "form-control"  %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :vendor_name %>
+      <%= form.text_field :vendor, data: {behavior: "autocomplete-order-vendors"}, class: "form-control"  %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :vendor_contact_person %>
+      <%= form.text_field :vendor_contact, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :vendor_address %>
+      <%= form.text_field :vendor_address, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, class: "form-control" %>
+    </div>
+
+     <div class="form-group">
+      <%= form.label :total %>
+      <%= form.number_field :total, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :po_number %>
+      <%= form.text_field :po_number,  class: "form-control"  %>
+    </div>
+
+
+    <div class="form-group">
+      <%= form.submit "Submit", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+</div>
