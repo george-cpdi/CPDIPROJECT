@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :work_orders
   scope '/dashboard' do
-      resources :parts, :vendors, :policies, :roles, :part_orders
+      resources :parts, :vendors, :policies, :roles, :part_orders, :work_orders
       get 'part/search', to: 'parts#search'
       get 'vendor/search', to: 'vendors#search'
       get 'role/search', to: 'roles#search'

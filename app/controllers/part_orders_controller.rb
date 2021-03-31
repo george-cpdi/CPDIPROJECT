@@ -80,6 +80,6 @@ class PartOrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def part_order_params
-      params.require(:part_order).permit(:part_name, :part_description, :vendor_id, :po_number, :vendor, :vendor_contact, :vendor_address, :quantity, :total)
+      params.require(:part_order).permit(:part_name, :part_description, :delivery_date, :vendor_id, :po_number, :vendor, :vendor_contact, :vendor_address, :quantity, :total)
     end
 end
