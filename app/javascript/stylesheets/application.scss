@@ -1,6 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
 @import "flatpickr/dist/flatpickr.css";
 
+a:hover {
+    color: #fff;
+    background-color: white;
+}
+
+.white {
+  color: white !important;
+}
+
  .form-signin {
   width: 100%;
   max-width: 330px;
