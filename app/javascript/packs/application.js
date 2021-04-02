@@ -16,7 +16,11 @@ require("moment/locale/ja")
 require("tempusdominus-bootstrap-4")
 require("flatpickr")
 import flatpickr from "flatpickr";
-
+import { Calendar } from '@fullcalendar/core';
+import interactionPlugin from '@fullcalendar/interaction';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
 
 import "../stylesheets/application";
 
@@ -34,7 +38,23 @@ require("packs/part_orders")
 
 document.addEventListener("turbolinks:load", () => {
     flatpickr("[class='form-control flatpickr']", {
-    enableTime: true,
-    dateFormat: "Y-m-d H:i",
-})
+   	 	enableTime: true,
+    	dateFormat: "Y-m-d H:i",
+	})
+
+	var calendarEl = document.getElementById('calendar');
+
+  var calendar = new Calendar(calendarEl, {
+    plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin ],
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+    }
+  });
+
+  calendar.render();
+
+	
+
 })

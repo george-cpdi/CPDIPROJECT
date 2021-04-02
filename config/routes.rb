@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'part_order/search', to: 'part_orders#search'
       get 'part_order/search_vendor', to: 'part_orders#search_vendor'
       get 'part_order/search_name', to: 'part_orders#search_name'
+      get 'work_order/calendar', to: 'work_orders#calendar'
   end
   get 'dashboard_unauth/index'
   devise_for :users
