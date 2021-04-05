@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_31_130959) do
+ActiveRecord::Schema.define(version: 2021_04_05_113018) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_130959) do
     t.string "issue"
     t.string "line"
     t.string "machine"
-    t.string "type"
+    t.string "work_order_type"
     t.datetime "request_date_time"
     t.string "level_of_issue"
     t.string "requested_by"
@@ -142,6 +142,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_130959) do
     t.datetime "complete_date_and_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "recurring"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

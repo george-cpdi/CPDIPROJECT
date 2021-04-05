@@ -50,7 +50,8 @@ document.addEventListener("turbolinks:load", () => {
       left: 'prev,next today',
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-    }
+    },
+    events: '/dashboard/work_order/events.json'
   });
 
   calendar.render();

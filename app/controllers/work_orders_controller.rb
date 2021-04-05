@@ -60,6 +60,10 @@ class WorkOrdersController < ApplicationController
   def calendar
   end
 
+  def events
+    @events = WorkOrder.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_work_order
@@ -68,6 +72,6 @@ class WorkOrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def work_order_params
-      params.require(:work_order).permit(:location, :issue, :line, :machine, :type, :request_date_time, :level_of_issue, :requested_by, :email, :description_of_issue, :planned_date_and_time, :complete_date_and_time)
+      params.require(:work_order).permit(:location, :issue, :line, :recurring, :machine, :work_order_type, :request_date_time, :level_of_issue, :requested_by, :email, :description_of_issue, :planned_date_and_time, :complete_date_and_time)
     end
 end
