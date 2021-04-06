@@ -5,6 +5,7 @@ class WorkOrdersController < ApplicationController
   # GET /work_orders or /work_orders.json
   def index
     @work_orders = WorkOrder.all
+    @work_order_requests = WorkOrderRequest.pending
   end
 
   # GET /work_orders/1 or /work_orders/1.json

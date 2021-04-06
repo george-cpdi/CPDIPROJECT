@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope '/dashboard' do
-      resources :parts, :vendors, :policies, :roles, :part_orders, :work_orders
+      resources :parts, :vendors, :policies, :roles, :part_orders, :work_orders, :work_order_requests
       get 'part/search', to: 'parts#search'
       get 'vendor/search', to: 'vendors#search'
       get 'role/search', to: 'roles#search'
@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       get 'part_order/search_name', to: 'part_orders#search_name'
       get 'work_order/calendar', to: 'work_orders#calendar'
       get 'work_order/events', to: 'work_orders#events'
+      post 'work_order_requests/:id/confirm', to: 'work_order_requests#confirm', as: :work_order_request_confirm
+      post 'work_order_requests/:id/deny', to: 'work_order_requests#deny', as: :work_order_request_deny
   end
   get 'dashboard_unauth/index'
   devise_for :users

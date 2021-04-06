@@ -1,0 +1,82 @@
+<%= form_with(model: work_order_request) do |form| %>
+  <% if work_order_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(work_order_request.errors.count, "error") %> prohibited this work_order_request from being saved:</h2>
+
+      <ul>
+        <% work_order_request.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :issue %>
+    <%= form.text_field :issue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :line %>
+    <%= form.text_field :line %>
+  </div>
+
+  <div class="field">
+    <%= form.label :machine %>
+    <%= form.text_field :machine %>
+  </div>
+
+  <div class="field">
+    <%= form.label :work_order_type %>
+    <%= form.text_field :work_order_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :request_date_time %>
+    <%= form.datetime_select :request_date_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level_of_issue %>
+    <%= form.text_field :level_of_issue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :requested_by %>
+    <%= form.text_field :requested_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description_of_issue %>
+    <%= form.text_field :description_of_issue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :planned_date_and_time %>
+    <%= form.datetime_select :planned_date_and_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :complete_date_and_time %>
+    <%= form.datetime_select :complete_date_and_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recurring %>
+    <%= form.check_box :recurring %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
