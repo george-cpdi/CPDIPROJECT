@@ -42,6 +42,13 @@ document.addEventListener("turbolinks:load", () => {
     	dateFormat: "Y-m-d H:i",
 	})
 
+    $('#quantity,#price').keyup(function () {
+        var sum = 0;
+         $('#total').val($('#quantity').val() * $('#price').val())
+        
+    })
+
+
 	var calendarEl = document.getElementById('calendar');
 
   var calendar = new Calendar(calendarEl, {
@@ -55,6 +62,8 @@ document.addEventListener("turbolinks:load", () => {
   });
 
   calendar.render();
+
+
 
 	
 

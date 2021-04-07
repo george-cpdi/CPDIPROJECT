@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_123437) do
+ActiveRecord::Schema.define(version: 2021_04_07_111409) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_04_06_123437) do
     t.string "po_number"
     t.string "vendor_id"
     t.datetime "delivery_date"
+    t.decimal "price"
   end
 
   create_table "parts", force: :cascade do |t|
