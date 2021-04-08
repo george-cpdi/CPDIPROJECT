@@ -29,6 +29,7 @@ class PartOrdersController < ApplicationController
   # GET /part_orders/new
   def new
     @part_order = PartOrder.new
+    @part_order.parts.build
   end
 
   # GET /part_orders/1/edit
@@ -80,6 +81,6 @@ class PartOrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def part_order_params
-      params.require(:part_order).permit(:part_name, :part_description, :delivery_date, :vendor_id, :po_number, :vendor, :vendor_contact, :vendor_address, :quantity, :total)
+      params.require(:part_order).permit(:part_name, :part_description, :delivery_date, :vendor_id, :po_number, :vendor, :vendor_contact, :vendor_address, :quantity, :total, parts_attributes: [:id, :description, :name, :quantity, :rate, :_destroy])
     end
 end

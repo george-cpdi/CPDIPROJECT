@@ -11,6 +11,7 @@ import "channels"
 require("bootstrap")
 require("jquery")
 require("easy-autocomplete")
+require("@nathanvda/cocoon")
 require("bootstrap-datepicker")
 require("moment/locale/ja")
 require("tempusdominus-bootstrap-4")

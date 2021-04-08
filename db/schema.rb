@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_111409) do
+ActiveRecord::Schema.define(version: 2021_04_08_121214) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -67,6 +67,9 @@ ActiveRecord::Schema.define(version: 2021_04_07_111409) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.integer "part_order_id"
+    t.decimal "rate"
+    t.index ["part_order_id"], name: "index_parts_on_part_order_id"
   end
 
   create_table "parts_vendors", force: :cascade do |t|
@@ -167,6 +170,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_111409) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "parts", "part_orders"
   add_foreign_key "policy_roles", "policies"
   add_foreign_key "policy_roles", "roles"
   add_foreign_key "policy_users", "policies"

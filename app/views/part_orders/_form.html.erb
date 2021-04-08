@@ -28,29 +28,74 @@
         </div>
       <% end %>
       <%= form_with(model: part_order) do |form| %>
+       <h5>Vendor Information</h5>
         <div class="form-group row">
 
-          <label for="championPart" class="col-sm-2 col-form-label">Champion Part #</label>
+          <label for="SelectVendor" class="col-sm-2 col-form-label">Select Vendor</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" id="championPart">
-          </div>
-          <label for="partDescription" class="col-sm-2 col-form-label">Part Description</label>
-          <div class="col-sm-4">
-            <%= form.text_area :part_description, class: "form-control" %>
+            <%= form.text_field :vendor_id,  class: "form-control"  %>
           </div>
         </div>
         <div class="form-group row">
-          <label for="championPart" class="col-sm-2 col-form-label">OEM Part #</label>
+          <label for="VendorName" class="col-sm-2 col-form-label">Vendor Name</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" id="championPart">
+            <%= form.text_field :vendor, data: {behavior: "autocomplete-order-vendors"}, class: "form-control"  %>
           </div>
         </div>
         <div class="form-group row">
-          <label for="championPart" class="col-sm-2 col-form-label">MFG Part #</label>
+          <label for="VendorPhoneNumber" class="col-sm-2 col-form-label">Vendor Phone Number</label>
           <div class="col-sm-4">
-            <%= form.text_field :mhr_number, data: {behavior: "autocomplete-parts-mhrnumber"}, class: "form-control" %>
+            <%= form.text_field :vendor_contact, class: "form-control" %>
           </div>
         </div>
+        <div class="form-group row">
+          <label for="VendorEmail" class="col-sm-2 col-form-label">Vendor Email</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="VendorEmail">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="VendorAddress" class="col-sm-2 col-form-label">Vendor Address</label>
+          <div class="col-sm-4">
+            <%= form.text_field :vendor_address, class: "form-control" %>
+          </div>
+        </div>
+         <br>
+
+        <h5>Part Information</h5>
+
+        
+        <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>Part Name</th>
+                  <th>Part description</th>
+                  <th>Quantity</th>
+                  <th>Rate</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody class="line_items">
+
+          <%= form.fields_for :parts do |part| %>
+             
+                <%= render 'part_fields', f: part %>
+              
+          
+          <% end %>
+          
+           
+ 
+          
+
+        </tbody>
+
+      </table>
+       <div class="links">
+              <%= link_to_add_association 'add part', form, :parts, data: {"association-insertion-node" => "tbody.line_items", "association-insertion-method" => "append"} %>
+            </div>
+          
+        
 
         <br>
 
@@ -85,38 +130,12 @@
 
         <br>
 
-        <h5>Vendor Information</h5>
-        <div class="form-group row">
+       
 
-          <label for="SelectVendor" class="col-sm-2 col-form-label">Select Vendor</label>
-          <div class="col-sm-4">
-            <%= form.text_field :vendor_id,  class: "form-control"  %>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="VendorName" class="col-sm-2 col-form-label">Vendor Name</label>
-          <div class="col-sm-4">
-            <%= form.text_field :vendor, data: {behavior: "autocomplete-order-vendors"}, class: "form-control"  %>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="VendorPhoneNumber" class="col-sm-2 col-form-label">Vendor Phone Number</label>
-          <div class="col-sm-4">
-            <%= form.text_field :vendor_contact, class: "form-control" %>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="VendorEmail" class="col-sm-2 col-form-label">Vendor Email</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" id="VendorEmail">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="VendorAddress" class="col-sm-2 col-form-label">Vendor Address</label>
-          <div class="col-sm-4">
-            <%= form.text_field :vendor_address, class: "form-control" %>
-          </div>
-        </div>
+        
+           
+ 
+          
 
 
         <br>

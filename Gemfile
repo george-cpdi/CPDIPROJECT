@@ -33,6 +33,7 @@ gem 'activerecord-sqlserver-adapter', github: 'lk0001/activerecord-sqlserver-ada
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 gem 'cancancan'
+gem "cocoon"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
