@@ -43,6 +43,7 @@ document.addEventListener("turbolinks:load", () => {
     	dateFormat: "Y-m-d H:i",
 	})
 
+
     $('#quantity,#price').keyup(function () {
         var sum = 0;
          $('#total').val($('#quantity').val() * $('#price').val())
@@ -68,4 +69,7 @@ document.addEventListener("turbolinks:load", () => {
 
 	
 
-})
+})// Support component names relative to this directory:
+var componentRequireContext = require.context("components", true);
+var ReactRailsUJS = require("react_ujs");
+ReactRailsUJS.useContext(componentRequireContext);

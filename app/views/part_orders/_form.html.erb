@@ -60,52 +60,14 @@
             <%= form.text_field :vendor_address, class: "form-control" %>
           </div>
         </div>
-         <br>
-
-        <h5>Part Information</h5>
-
-        
-        <table class="table table-striped table-sm">
-              <thead>
-                <tr>
-                  <th>Part Name</th>
-                  <th>Part description</th>
-                  <th>Quantity</th>
-                  <th>Rate</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody class="line_items">
-
-          <%= form.fields_for :parts do |part| %>
-             
-                <%= render 'part_fields', f: part %>
-              
-          
-          <% end %>
-          
-           
- 
-          
-
-        </tbody>
-
-      </table>
-       <div class="links">
-              <%= link_to_add_association 'add part', form, :parts, data: {"association-insertion-node" => "tbody.line_items", "association-insertion-method" => "append"} %>
-            </div>
+    
           
         
 
         <br>
 
-        <h5>Order Information</h5>
+        <%= react_component("PartItem") %>
         <div class="form-group row">
-
-          <label for="Order" class="col-sm-2 col-form-label">Order Quantity</label>
-          <div class="col-sm-2">
-            <%= form.number_field :quantity, class: "form-control", id: "quantity" %>
-          </div>
           <label for="Delivery" class="col-sm-2 col-form-label">Delivery Date</label>
           <div class="col-sm-2">
             <%= form.text_field :delivery_date, class: "form-control flatpickr" %>
@@ -115,19 +77,6 @@
             <%= form.text_field :po_number,  class: "form-control"  %>
           </div>
         </div>
-        <div class="form-group row">
-
-          <label for="Order" class="col-sm-2 col-form-label">Order Price</label>
-          <div class="col-sm-2">
-            <%= form.number_field :price, class: "form-control price", id: "price" %>
-          </div>
-          <label for="Delivery" class="col-sm-2 col-form-label">Total</label>
-          <div class="col-sm-2">
-            <%= form.number_field :total, class: "form-control", id: "total", readonly: true  %>
-          </div>
-          
-        </div>
-
         <br>
 
        
