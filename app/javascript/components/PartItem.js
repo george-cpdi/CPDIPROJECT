@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import flatpickr from "flatpickr";
 
+
+
 class PartItem extends React.Component {
   constructor(props) {
     super(props);
@@ -22,17 +24,18 @@ class PartItem extends React.Component {
               		<td>
 				        <input
 				          type="text"
-				          name={`part_order[parts_attributes][${i}][name]`}
+				          name={`part_order[part_items_attributes][${i}][name]`}
 				          className="form-control"
 				          value={el.name || ""}
 				          data-title="name"
+                  data-behavior="autocomplete-parts-name"
 				          onChange={this.handleChange.bind(this, i)}
 				        />
 				    </td>
 				    <td>
 				        <input
 				          type="text"
-				          name={`part_order[parts_attributes][${i}][description]`}
+				          name={`part_order[part_items_attributes][${i}][description]`}
 				          className="form-control"
 				          value={el.description || ""}
 				          data-title="description"
@@ -42,7 +45,7 @@ class PartItem extends React.Component {
 				    <td>
 				        <input
 				          type="number"
-				          name={`part_order[parts_attributes][${i}][quantity]`}
+				          name={`part_order[part_items_attributes][${i}][quantity]`}
 				          className="form-control"
 				          value={el.quantity || ""}
 				          data-title="quantity"
@@ -52,7 +55,7 @@ class PartItem extends React.Component {
 				    <td>
 				        <input
 				          type="number"
-				          name={`part_order[parts_attributes][${i}][rate]`}
+				          name={`part_order[part_items_attributes][${i}][rate]`}
 				          className="form-control"
 				          value={el.rate || ""}
 				          data-title="rate"
@@ -141,4 +144,8 @@ class PartItem extends React.Component {
 }
 
 
+
 export default PartItem
+
+
+

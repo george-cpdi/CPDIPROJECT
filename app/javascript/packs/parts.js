@@ -1,6 +1,7 @@
 document.addEventListener("turbolinks:load", function() {
   var mfr_options = {
   	url: function(phrase) {
+      console.log('test test')
       return "/dashboard/part/search.json?mfr_number=" + phrase;
     },
     getValue: "mfr_number"

@@ -1,5 +1,4 @@
 document.addEventListener("turbolinks:load", function() {
-  console.log("testtest")
   var options = {
   	url: function(phrase) {
       return "/dashboard/part_order/search.json?q=" + phrase;
@@ -26,10 +25,10 @@ document.addEventListener("turbolinks:load", function() {
         onSelectItemEvent: function() {
           var selectedItemValue = $("#part_order_part_name").getSelectedItemData().description;
             $("#part_order_part_description").val(selectedItemValue);
-          var vendor_id = $("#part_order_part_name").getSelectedItemData().vendor_id;
-          var mfr_number = $("#part_order_part_mfr_number").getSelectedItemData().mfr_number;
-            $("#part_order_mhr_number").val(mfr_number);
-            $("#part_order_vendor_id").val(vendor_id);
+          //var vendor_id = $("#part_order_part_name").getSelectedItemData().vendor_id;
+          //var mfr_number = $("#part_order_part_mfr_number").getSelectedItemData().mfr_number;
+           // $("#part_order_mhr_number").val(mfr_number);
+            //$("#part_order_vendor_id").val(vendor_id);
 
         }
     }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_121214) do
+ActiveRecord::Schema.define(version: 2021_04_12_114435) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 2021_04_08_121214) do
     t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "part_items", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "quantity"
+    t.decimal "rate"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "part_order_id", null: false
+    t.index ["part_order_id"], name: "index_part_items_on_part_order_id"
   end
 
   create_table "part_orders", force: :cascade do |t|
@@ -170,6 +181,7 @@ ActiveRecord::Schema.define(version: 2021_04_08_121214) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "part_items", "part_orders"
   add_foreign_key "parts", "part_orders"
   add_foreign_key "policy_roles", "policies"
   add_foreign_key "policy_roles", "roles"

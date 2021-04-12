@@ -25,9 +25,10 @@ import listPlugin from '@fullcalendar/list';
 
 import "../stylesheets/application";
 
-
+var ReactRailsUJS = require("react_ujs");
 Rails.start()
 Turbolinks.start()
+ReactRailsUJS.detectEvents();
 ActiveStorage.start()
 
 require("packs/parts")
