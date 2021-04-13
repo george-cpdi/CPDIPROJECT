@@ -43,6 +43,7 @@
             <tr>
               <th>Image</th>
               <th>ID</th>
+              <th>Name</th>
               <th>Description</th>
               <th>Location</th>
               <th>Quantity</th>
@@ -59,6 +60,7 @@
               <tr>
                 <td><% unless part.main_image.url.nil? %><%= image_tag part.main_image, style: "width: 50px;" %><% end %></td>
                 <td><%= part.id %></td>
+                <td><%= part.name %></td>
                 <td><%= part.description %></td>
                 <td><%= part.location %></td>
                 <td><%= part.quantity %></td>

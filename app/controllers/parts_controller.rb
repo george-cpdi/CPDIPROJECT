@@ -95,6 +95,6 @@ class PartsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def part_params
-      params.require(:part).permit(:description, :location, :quantity, :mfr_number, :barcode, :machine, :main_image, vendor_ids: [])
+      params.require(:part).permit(:name, :description, :location, :quantity, :mfr_number, :barcode, :machine, :main_image, vendor_ids: [])
     end
 end
