@@ -99,6 +99,11 @@
     <%= form.text_field :complete_date_and_time, class: "form-control flatpickr" %>
   </div>
 
+  <div class="form-group">
+    <%= form.label :status %>
+    <%= form.select :status, [['Pending', "pending"], ['Completed', "completed"]],{} ,class: "form-control" %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
