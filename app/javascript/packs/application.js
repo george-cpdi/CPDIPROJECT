@@ -36,9 +36,18 @@ require("packs/vendors")
 require("packs/roles")
 require("packs/policies")
 require("packs/part_orders")
+// Add DataTables jQuery plugin
+require('datatables.net-bs4')
+
+import $ from 'jquery';
+global.$ = jQuery;
+
 
 
 document.addEventListener("turbolinks:load", () => {
+
+  $('#table-work-orders').DataTable();
+
     flatpickr("[class='form-control flatpickr']", {
    	 	enableTime: true,
     	dateFormat: "Y-m-d H:i",

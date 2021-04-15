@@ -4,7 +4,8 @@ class PartOrdersController < ApplicationController
 
   # GET /part_orders or /part_orders.json
   def index
-    @part_orders = PartOrder.all
+    @part_orders = PartOrder.open
+    @closed_part_orders = PartOrder.closed
   end
 
   def search
@@ -81,6 +82,6 @@ class PartOrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def part_order_params
-      params.require(:part_order).permit(:part_name, :part_description, :delivery_date, :vendor_id, :po_number, :vendor, :vendor_contact, :vendor_address, :quantity, :total, part_items_attributes: [:id, :description, :name, :quantity, :rate, :_destroy])
+      params.require(:part_order).permit(:part_name, :part_description, :status, :delivery_date, :vendor_id, :po_number, :vendor, :vendor_contact, :vendor_address, :quantity, :total, part_items_attributes: [:id, :description, :name, :quantity, :rate, :_destroy])
     end
 end

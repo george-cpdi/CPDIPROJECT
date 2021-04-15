@@ -2656,6 +2656,21 @@
   dependencies:
     "assert-plus" "^1.0.0"
 
+"datatables.net-bs4@^1.10.24":
+  "integrity" "sha512-NgjQMqCo5pg49c5TWsc78UYhcvWPAFkZ7qH4yKAb1e0eLNCAo+TLeaIsDiAPpcWwP7xpjdAmZIIbXDpspNTCkg=="
+  "resolved" "https://registry.npmjs.org/datatables.net-bs4/-/datatables.net-bs4-1.10.24.tgz"
+  "version" "1.10.24"
+  dependencies:
+    "datatables.net" "1.10.24"
+    "jquery" ">=1.7"
+
+"datatables.net@^1.10.24", "datatables.net@1.10.24":
+  "integrity" "sha512-CwXixvOdinvBCLXvcTloDinWiEM7Geaz+GwyjPrZL+MXIGPcLv4Op1bbWn8ErsI1JWMIWC8Cuf1rnDU2RrFV5w=="
+  "resolved" "https://registry.npmjs.org/datatables.net/-/datatables.net-1.10.24.tgz"
+  "version" "1.10.24"
+  dependencies:
+    "jquery" ">=1.7"
+
 "debug@^2.2.0", "debug@^2.3.3", "debug@2.6.9":
   "integrity" "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="
   "resolved" "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz"
@@ -4473,7 +4488,7 @@
     "merge-stream" "^2.0.0"
     "supports-color" "^7.0.0"
 
-"jquery@*", "jquery@^3.3.1", "jquery@^3.5.0", "jquery@^3.5.1", "jquery@^3.6.0", "jquery@>=1.7.1 <4.0.0", "jquery@1.9.1 - 3":
+"jquery@*", "jquery@^3.3.1", "jquery@^3.5.0", "jquery@^3.5.1", "jquery@^3.6.0", "jquery@>=1.7", "jquery@>=1.7.1 <4.0.0", "jquery@1.9.1 - 3":
   "integrity" "sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw=="
   "resolved" "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz"
   "version" "3.6.0"
