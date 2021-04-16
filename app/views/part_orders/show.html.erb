@@ -12,6 +12,12 @@
 
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+	<div class="col-sm-12">
+		<%= link_to 'Export to PDF', part_order_path(@part_order, format: "pdf"), class: "btn btn-primary white", style: "float: right;" %>
+	</div>
+</div>
+
 <div class="card-container">
   
   <div class="card">

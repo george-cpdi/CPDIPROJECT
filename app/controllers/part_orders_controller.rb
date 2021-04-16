@@ -6,6 +6,7 @@ class PartOrdersController < ApplicationController
   def index
     @part_orders = PartOrder.open
     @closed_part_orders = PartOrder.closed
+    @all_part_orders = PartOrder.all
   end
 
   def search
@@ -25,6 +26,13 @@ class PartOrdersController < ApplicationController
 
   # GET /part_orders/1 or /part_orders/1.json
   def show
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name", :template => 'part_orders/show.html.erb'   # Excluding ".pdf" extension.
+      end
+    end
   end
 
   # GET /part_orders/new
