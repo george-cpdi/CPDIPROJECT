@@ -18,6 +18,7 @@ require("tempusdominus-bootstrap-4")
 require("flatpickr")
 import flatpickr from "flatpickr";
 import { Calendar } from '@fullcalendar/core';
+import rrulePlugin from '@fullcalendar/rrule'
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -64,7 +65,7 @@ document.addEventListener("turbolinks:load", () => {
 	var calendarEl = document.getElementById('calendar');
 
   var calendar = new Calendar(calendarEl, {
-    plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin ],
+    plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, rrulePlugin ],
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
