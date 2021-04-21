@@ -82,6 +82,17 @@ class PartOrdersController < ApplicationController
     end
   end
 
+  # PO Receipt
+  def receipt
+    @part_order = PartOrder.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name", :template => 'part_orders/receipt.html.erb'   # Excluding ".pdf" extension.
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_part_order
