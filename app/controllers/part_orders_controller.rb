@@ -93,6 +93,10 @@ class PartOrdersController < ApplicationController
     end
   end
 
+  def receipts
+    @part_orders = PartOrder.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_part_order
@@ -101,6 +105,6 @@ class PartOrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def part_order_params
-      params.require(:part_order).permit(:part_name, :part_description, :status, :delivery_date, :vendor_id, :po_number, :vendor, :vendor_contact, :vendor_address, :quantity, :total, part_items_attributes: [:id, :description, :name, :quantity, :rate, :_destroy])
+      params.require(:part_order).permit(:part_name, :part_description, :status, :delivery_date, :vendor_id, :po_number, :vendor, :vendor_contact, :vendor_address, :quantity, :total, part_items_attributes: [:id, :description, :name, :quantity, :received, :rate, :_destroy])
     end
 end

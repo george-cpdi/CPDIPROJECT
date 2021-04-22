@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       post 'work_order_requests/:id/confirm', to: 'work_order_requests#confirm', as: :work_order_request_confirm
       post 'work_order_requests/:id/deny', to: 'work_order_requests#deny', as: :work_order_request_deny
       get 'part_order/:id/receipt', to: "part_orders#receipt", as: :part_order_receipt
+      get 'part_order_receipts', to: "part_orders#receipts", as: :part_order_receipts
       put 'part_items/:id', to: "part_items#update", as: :part_item_update
   end
   get 'dashboard_unauth/index'
