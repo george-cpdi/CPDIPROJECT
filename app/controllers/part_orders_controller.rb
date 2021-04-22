@@ -64,7 +64,7 @@ class PartOrdersController < ApplicationController
   def update
     respond_to do |format|
       if @part_order.update(part_order_params)
-        format.html { redirect_to @part_order, notice: "Part order was successfully updated." }
+        format.html { redirect_to part_order_receipt_path(@part_order), notice: "Part order was successfully updated." }
         format.json { render :show, status: :ok, location: @part_order }
       else
         format.html { render :edit, status: :unprocessable_entity }
