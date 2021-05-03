@@ -39,14 +39,18 @@ document.addEventListener("turbolinks:load", function() {
       return "/dashboard/part_order/search_vendor.json?q=" + phrase;
     },
     getValue: function(element) {
-        return element.name;
+        return element.code;
     },
     list: {
         onSelectItemEvent: function() {
-        	var contact_person = $("#part_order_vendor").getSelectedItemData().contact_person;
-        	var address = $("#part_order_vendor").getSelectedItemData().address;
-            $("#part_order_vendor_contact").val(contact_person);
+        	var contact_person = $("#part_order_vendor_id").getSelectedItemData().contact_person;
+        	var address = $("#part_order_vendor_id").getSelectedItemData().address;
+          var phone_number = $("#part_order_vendor_id").getSelectedItemData().phone_number;
+          var email_address = $("#part_order_vendor_id").getSelectedItemData().email_address;
+            $("#part_order_vendor").val(contact_person);
             $("#part_order_vendor_address").val(address);
+            $('#part_order_vendor_contact').val(phone_number);
+            $("#VendorEmail").val(email_address);
         }
     }
   };

@@ -14,13 +14,28 @@
       <% end %>
 
       <div class="form-group">
+        <%= form.label :vendor_code %>
+        <%= form.text_field :code, class: "form-control", data: {behavior: "autocomplete-vendors"} %>
+      </div>
+
+      <div class="form-group">
         <%= form.label :name %>
-        <%= form.text_field :name, class: "form-control", data: {behavior: "autocomplete-vendors"} %>
+        <%= form.text_field :name, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= form.label :contact_person %>
         <%= form.text_field :contact_person, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :phone_number %>
+        <%= form.text_field :phone_number, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :email_address %>
+        <%= form.text_field :email_address, class: "form-control" %>
       </div>
 
       <div class="form-group">

@@ -21,7 +21,7 @@ class PartOrdersController < ApplicationController
 
   def search_vendor
     q = params[:q].downcase
-    @vendors = Vendor.where("name LIKE ?", "%#{q}%").limit(5)
+    @vendors = Vendor.where("code LIKE ?", "%#{q}%").limit(5)
   end
 
   # GET /part_orders/1 or /part_orders/1.json

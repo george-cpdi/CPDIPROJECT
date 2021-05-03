@@ -33,13 +33,13 @@
 
           <label for="SelectVendor" class="col-sm-2 col-form-label">Select Vendor</label>
           <div class="col-sm-4">
-            <%= form.text_field :vendor_id,  class: "form-control"  %>
+            <%= form.text_field :vendor_id,  class: "form-control", data: {behavior: "autocomplete-order-vendors"}  %>
           </div>
         </div>
         <div class="form-group row">
           <label for="VendorName" class="col-sm-2 col-form-label">Vendor Name</label>
           <div class="col-sm-4">
-            <%= form.text_field :vendor, data: {behavior: "autocomplete-order-vendors"}, class: "form-control"  %>
+            <%= form.text_field :vendor, class: "form-control"  %>
           </div>
         </div>
         <div class="form-group row">
